@@ -20,7 +20,6 @@ const {
     <meta name="description" content={description} />
     <title>{title}</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,20 +27,15 @@ const {
       rel="stylesheet"
     />
 
-    <!-- AOS CSS -->
     <link rel="stylesheet" href="node_modules/aos/dist/aos.css" />
   </head>
   <body class="antialiased text-primary bg-white overflow-x-hidden">
     <slot />
 
-    <!-- AOS Init Script -->
     <script>
-      // Import AOS from node_modules
       import AOS from "aos";
 
-      // Initialize AOS with mobile-first approach
       document.addEventListener("DOMContentLoaded", () => {
-        // Check if device is mobile
         const isMobile = window.innerWidth < 768;
 
         AOS.init({
@@ -51,7 +45,6 @@ const {
           startEvent: "DOMContentLoaded",
         });
 
-        // Add simple fade-in animation for mobile
         if (isMobile) {
           document.querySelectorAll("[data-aos]").forEach((element) => {
             element.classList.add("mobile-fade-in");
