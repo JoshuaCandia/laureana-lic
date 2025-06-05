@@ -1,0 +1,82 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Lic. Mariana González | Psicóloga para adultos",
+  description = "Psicóloga especializada en terapia individual para adultos, ofreciendo un espacio seguro para tu crecimiento personal y bienestar emocional.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="node_modules/aos/dist/aos.css" />
+  </head>
+  <body class="antialiased text-primary bg-white">
+    <slot />
+
+    <!-- AOS Init Script -->
+    <script>
+      // Import AOS from node_modules
+      import AOS from "aos";
+
+      // Initialize AOS
+      document.addEventListener("DOMContentLoaded", () => {
+        AOS.init({
+          duration: 800,
+          easing: "ease-out",
+          once: true,
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  html {
+    font-family: "Inter", system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Lora", Georgia, serif;
+    line-height: 1.2;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+</style>
