@@ -41,26 +41,12 @@ const {
 
       // Initialize AOS with mobile-first approach
       document.addEventListener("DOMContentLoaded", () => {
-        // Check if device is mobile
-        const isMobile = window.innerWidth < 768;
-
         AOS.init({
           duration: 800,
           easing: "ease-out",
           once: true,
           startEvent: "DOMContentLoaded",
-          // Only enable AOS on desktop
-          disable: function () {
-            return window.innerWidth < 768;
-          },
         });
-
-        // Add simple fade-in animation for mobile
-        if (isMobile) {
-          document.querySelectorAll("[data-aos]").forEach((element) => {
-            element.classList.add("mobile-fade-in");
-          });
-        }
       });
     </script>
   </body>
@@ -95,24 +81,5 @@ const {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
-  }
-
-  /* Mobile animation fallback */
-  @media (max-width: 767px) {
-    .mobile-fade-in {
-      opacity: 0;
-      animation: mobileFadeIn 0.8s ease-out forwards;
-    }
-  }
-
-  @keyframes mobileFadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 </style>
