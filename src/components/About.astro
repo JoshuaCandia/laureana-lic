@@ -1,37 +1,46 @@
 ---
 const professionals = [
   {
+    slug: "maria-elena-rodriguez",
     name: "Dra. María Elena Rodríguez",
     title: "Neuropsicóloga Clínica",
     image: "https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg",
     description: "Especialista en evaluaciones neurocognitivas y desarrollo infantil",
-    cv: {
-      education: "Doctorado en Neuropsicología - Universidad de Buenos Aires",
-      experience: "15 años de experiencia en evaluación neurocognitiva",
-      specialties: ["Evaluaciones neurocognitivas", "Trastornos del aprendizaje", "TDAH", "Autismo"]
-    }
+    strengths: [
+      "Evaluaciones neurocognitivas integrales",
+      "Diagnóstico diferencial de trastornos del neurodesarrollo",
+      "Intervención temprana en dificultades de aprendizaje",
+      "Trabajo interdisciplinario con equipos médicos",
+      "Investigación en neuroplasticidad infantil"
+    ]
   },
   {
+    slug: "ana-sofia-martinez",
     name: "Lic. Ana Sofía Martínez",
     title: "Psicopedagoga y Orientadora Vocacional",
     image: "https://images.pexels.com/photos/7176026/pexels-photo-7176026.jpeg",
     description: "Experta en orientación vocacional y estrategias de aprendizaje",
-    cv: {
-      education: "Licenciatura en Psicopedagogía - Universidad Católica Argentina",
-      experience: "12 años en orientación vocacional y educativa",
-      specialties: ["Orientación vocacional", "Dificultades de aprendizaje", "Estrategias didácticas", "Capacitación docente"]
-    }
+    strengths: [
+      "Orientación vocacional integral",
+      "Diseño de estrategias de aprendizaje personalizadas",
+      "Capacitación docente en neuroeducación",
+      "Intervención en dificultades de aprendizaje",
+      "Asesoramiento familiar en procesos educativos"
+    ]
   },
   {
+    slug: "carolina-fernandez",
     name: "Lic. Carolina Fernández",
     title: "Psicóloga Organizacional",
     image: "https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg",
     description: "Especialista en selección de personal y neuroliderazgo",
-    cv: {
-      education: "Licenciatura en Psicología - Universidad del Salvador",
-      experience: "10 años en psicología organizacional y recursos humanos",
-      specialties: ["Selección de personal", "Neuroliderazgo", "Capacitación directivos", "Evaluación de competencias"]
-    }
+    strengths: [
+      "Selección de personal por competencias",
+      "Desarrollo de liderazgo organizacional",
+      "Evaluación de clima laboral",
+      "Diseño de programas de capacitación",
+      "Consultoría en gestión del cambio"
+    ]
   }
 ];
 ---
@@ -68,64 +77,26 @@ const professionals = [
             <p class="text-accent font-medium mb-3">{professional.title}</p>
             <p class="text-primary/80 text-sm mb-4">{professional.description}</p>
             
-            <button 
-              class="cv-toggle text-accent hover:text-accent/80 text-sm font-medium flex items-center transition-colors"
-              data-target={`cv-${index}`}
-            >
-              Ver CV completo
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            
-            <div id={`cv-${index}`} class="cv-content hidden mt-4 pt-4 border-t border-gray-100">
-              <div class="space-y-3 text-sm">
-                <div>
-                  <h4 class="font-medium text-primary mb-1">Formación</h4>
-                  <p class="text-primary/70">{professional.cv.education}</p>
-                </div>
-                <div>
-                  <h4 class="font-medium text-primary mb-1">Experiencia</h4>
-                  <p class="text-primary/70">{professional.cv.experience}</p>
-                </div>
-                <div>
-                  <h4 class="font-medium text-primary mb-1">Especialidades</h4>
-                  <div class="flex flex-wrap gap-1">
-                    {professional.cv.specialties.map((specialty) => (
-                      <span class="bg-accent/10 text-accent px-2 py-1 rounded text-xs">
-                        {specialty}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+            <div class="mb-4">
+              <h4 class="font-medium text-primary mb-2 text-sm">Especialidades:</h4>
+              <div class="flex flex-wrap gap-1">
+                {professional.strengths.slice(0, 3).map((strength) => (
+                  <span class="bg-accent/10 text-accent px-2 py-1 rounded text-xs">
+                    {strength}
+                  </span>
+                ))}
               </div>
             </div>
+            
+            <a 
+              href={`/profesional/${professional.slug}`}
+              class="inline-block text-accent hover:text-accent/80 text-sm font-medium transition-colors"
+            >
+              Ver perfil completo →
+            </a>
           </div>
         </div>
       ))}
     </div>
   </div>
 </section>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggleButtons = document.querySelectorAll('.cv-toggle');
-    
-    toggleButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const targetId = button.getAttribute('data-target');
-        const content = document.getElementById(targetId);
-        const arrow = button.querySelector('svg');
-        
-        if (content && arrow) {
-          content.classList.toggle('hidden');
-          arrow.classList.toggle('rotate-180');
-          
-          const isExpanded = !content.classList.contains('hidden');
-          button.textContent = isExpanded ? 'Ocultar CV' : 'Ver CV completo';
-          button.appendChild(arrow);
-        }
-      });
-    });
-  });
-</script>
