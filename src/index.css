@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
     scroll-behavior: smooth;
     overflow-x: hidden;
   }
@@ -17,8 +17,13 @@
     width: 100%;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lora', Georgia, serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Lora", Georgia, serif;
     line-height: 1.2;
   }
 }
@@ -37,7 +42,7 @@
   }
 
   .card {
-    @apply bg-white rounded-lg shadow-sm border border-stone-light overflow-hidden hover:shadow-md transition-all duration-300;
+    @apply bg-white rounded-lg shadow-sm border border-light overflow-hidden hover:shadow-md transition-all duration-300;
   }
 
   .section-title {
