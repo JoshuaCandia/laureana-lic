@@ -52,29 +52,7 @@ const professionals = [
 
 const About = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
     <LazyMotion features={domAnimation}>
@@ -82,10 +60,9 @@ const About = () => {
         <div className="container">
           <m.div
             className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            style={{ willChange: "opacity, transform" }}
+            transition={{ duration: 0.5 }}
           >
             <h2 className="section-title">Sobre Nosotras</h2>
             <div className="divider" />
@@ -96,20 +73,15 @@ const About = () => {
             </p>
           </m.div>
 
-          <m.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-          >
-            {professionals.map((professional) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {professionals.map((professional, index) => (
               <m.div
                 key={professional.slug}
                 className="card group"
-                variants={itemVariants}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -4 }}
-                transition={{ type: "spring", stiffness: 150, damping: 18 }}
-                style={{ willChange: "opacity, transform" }}
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
@@ -139,7 +111,7 @@ const About = () => {
                 </div>
               </m.div>
             ))}
-          </m.div>
+          </div>
         </div>
       </section>
     </LazyMotion>

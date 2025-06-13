@@ -26,6 +26,19 @@
     font-family: "Lora", Georgia, serif;
     line-height: 1.2;
   }
+
+  /* Optimización de performance para animaciones */
+  * {
+    will-change: auto;
+  }
+  
+  .animate-element {
+    will-change: transform, opacity;
+  }
+  
+  .animate-element:not(:hover):not(:focus) {
+    will-change: auto;
+  }
 }
 
 @layer components {

@@ -29,7 +29,6 @@ const Hero = () => {
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              style={{ willChange: "opacity, transform" }}
             >
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-medium text-primary mb-4 md:mb-6">
                 Punto de Partida
@@ -52,7 +51,6 @@ const Hero = () => {
                 className="btn-primary inline-block"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                style={{ willChange: "transform" }}
               >
                 Comenzar ahora
               </m.a>
@@ -63,7 +61,6 @@ const Hero = () => {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-              style={{ willChange: "opacity, transform" }}
             >
               <div className="aspect-[4/5] md:aspect-[3/4] rounded-lg overflow-hidden">
                 <img
@@ -78,11 +75,10 @@ const Hero = () => {
           </div>
 
           <m.div
-            className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center w-full px-4"
+            className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            style={{ willChange: "opacity, transform" }}
           >
             <a
               href="#about"
@@ -101,7 +97,6 @@ const Hero = () => {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                style={{ willChange: "transform" }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

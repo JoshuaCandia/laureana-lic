@@ -12,7 +12,7 @@ const Contact = () => {
   const [showSuccess, setShowSuccess] = useState(false);
 
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,36 +42,14 @@ const Contact = () => {
     });
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <section id="contact" className="py-24 bg-secondary/30" ref={ref}>
       <div className="container">
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5 }}
         >
           <h2 className="section-title">Contáctanos</h2>
           <div className="divider" />
@@ -81,13 +59,12 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          <motion.div variants={itemVariants}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+          >
             <div className="bg-white p-8 rounded-lg shadow-sm border border-light">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -224,7 +201,11 @@ const Contact = () => {
             </div>
           </motion.div>
 
-          <motion.div variants={itemVariants}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <div className="bg-white p-8 rounded-lg shadow-sm border border-light h-full">
               <h3 className="text-xl font-medium text-primary mb-6">
                 Información de contacto
@@ -402,7 +383,7 @@ const Contact = () => {
               </div>
             </div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
