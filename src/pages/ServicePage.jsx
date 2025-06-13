@@ -71,7 +71,7 @@ const ServicePage = () => {
       <Navbar />
       
       <main className="pt-20">
-        {/* Hero Section */}
+        {/* Hero Section - SOLO ESTA SECCIÓN TIENE ANIMACIONES */}
         <section className="py-16 bg-secondary/30">
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -132,17 +132,11 @@ const ServicePage = () => {
           </div>
         </section>
 
-        {/* Información General */}
+        {/* Información General - SIN ANIMACIONES */}
         <section id="detalles" className="py-16">
           <div className="container">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              <motion.div
-                className="text-center"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
+              <div className="text-center">
                 <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -150,15 +144,9 @@ const ServicePage = () => {
                 </div>
                 <h3 className="text-lg font-medium text-primary mb-2">Dirigido a</h3>
                 <p className="text-primary/80">{service.target}</p>
-              </motion.div>
+              </div>
               
-              <motion.div
-                className="text-center"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
+              <div className="text-center">
                 <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -166,15 +154,9 @@ const ServicePage = () => {
                 </div>
                 <h3 className="text-lg font-medium text-primary mb-2">Duración</h3>
                 <p className="text-primary/80">{service.duration}</p>
-              </motion.div>
+              </div>
               
-              <motion.div
-                className="text-center"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
+              <div className="text-center">
                 <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -182,21 +164,15 @@ const ServicePage = () => {
                 </div>
                 <h3 className="text-lg font-medium text-primary mb-2">Modalidad</h3>
                 <p className="text-primary/80">Presencial y Online</p>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* CTA Section - SIN ANIMACIONES */}
         <section className="py-16">
           <div className="container">
-            <motion.div
-              className="bg-accent/10 rounded-lg p-8 text-center"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
+            <div className="bg-accent/10 rounded-lg p-8 text-center">
               <h3 className="text-2xl font-medium text-primary mb-4">
                 ¿Estás interesado en este servicio?
               </h3>
@@ -205,26 +181,19 @@ const ServicePage = () => {
                 y descubre cómo podemos ayudarte a alcanzar tus objetivos.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <motion.a 
-                  href="/#contact" 
-                  className="btn-primary"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
+                <a href="/#contact" className="btn-primary">
                   Solicitar información
-                </motion.a>
-                <motion.a 
+                </a>
+                <a 
                   href="https://wa.me/5491123456789" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                 >
                   WhatsApp
-                </motion.a>
+                </a>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       </main>

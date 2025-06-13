@@ -1,5 +1,5 @@
-import React, { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,9 +10,6 @@ const Contact = () => {
     message: "",
   });
   const [showSuccess, setShowSuccess] = useState(false);
-
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,12 +40,12 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-secondary/30" ref={ref}>
+    <section id="contact" className="py-24 bg-secondary/30">
       <div className="container">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           <h2 className="section-title">Contáctanos</h2>
@@ -62,7 +59,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
             <div className="bg-white p-8 rounded-lg shadow-sm border border-light">
@@ -203,7 +200,7 @@ const Contact = () => {
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="bg-white p-8 rounded-lg shadow-sm border border-light h-full">
@@ -212,11 +209,7 @@ const Contact = () => {
               </h3>
 
               <div className="space-y-6">
-                <motion.div
-                  className="flex items-start"
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
+                <div className="flex items-start">
                   <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mr-4 flex-shrink-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -244,13 +237,9 @@ const Contact = () => {
                       info@puntodepartida.com
                     </a>
                   </div>
-                </motion.div>
+                </div>
 
-                <motion.div
-                  className="flex items-start"
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
+                <div className="flex items-start">
                   <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mr-4 flex-shrink-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -276,13 +265,9 @@ const Contact = () => {
                       +54 9 11 2345-6789
                     </a>
                   </div>
-                </motion.div>
+                </div>
 
-                <motion.div
-                  className="flex items-start"
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
+                <div className="flex items-start">
                   <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mr-4 flex-shrink-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -302,13 +287,9 @@ const Contact = () => {
                       +54 9 11 2345-6789
                     </a>
                   </div>
-                </motion.div>
+                </div>
 
-                <motion.div
-                  className="flex items-start"
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
+                <div className="flex items-start">
                   <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mr-4 flex-shrink-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -346,13 +327,9 @@ const Contact = () => {
                       Ver en Google Maps
                     </a>
                   </div>
-                </motion.div>
+                </div>
 
-                <motion.div
-                  className="flex items-start"
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
+                <div className="flex items-start">
                   <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mr-4 flex-shrink-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -379,7 +356,7 @@ const Contact = () => {
                       Sábados: 9:00 - 13:00
                     </p>
                   </div>
-                </motion.div>
+                </div>
               </div>
             </div>
           </motion.div>

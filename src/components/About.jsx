@@ -1,6 +1,5 @@
 import React from "react";
-import { LazyMotion, m, domAnimation, useInView } from "framer-motion";
-import { useRef } from "react";
+import { LazyMotion, m, domAnimation } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const professionals = [
@@ -51,17 +50,14 @@ const professionals = [
 ];
 
 const About = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
   return (
     <LazyMotion features={domAnimation}>
-      <section id="about" className="py-24 bg-secondary/30" ref={ref}>
+      <section id="about" className="py-24 bg-secondary/30">
         <div className="container">
           <m.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
             <h2 className="section-title">Sobre Nosotras</h2>
@@ -79,7 +75,7 @@ const About = () => {
                 key={professional.slug}
                 className="card group"
                 initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -4 }}
               >

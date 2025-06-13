@@ -8,12 +8,7 @@ const Footer = () => {
     <footer className="bg-primary text-white py-12">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <h3 className="text-xl font-serif font-medium mb-4">Punto de Partida</h3>
             <p className="text-white/70 mb-4 italic">
               Un inicio con propósito
@@ -22,14 +17,9 @@ const Footer = () => {
               Consultora especializada en educación y evaluaciones neurocognitivas, 
               comprometida con el desarrollo integral de las personas.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <h3 className="text-xl font-serif font-medium mb-4">Servicios</h3>
             <ul className="space-y-2">
               <li><span className="text-white/70">Orientación Vocacional</span></li>
@@ -38,14 +28,9 @@ const Footer = () => {
               <li><span className="text-white/70">Capacitación Docente</span></li>
               <li><span className="text-white/70">Neuroliderazgo</span></li>
             </ul>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <h3 className="text-xl font-serif font-medium mb-4">Contacto</h3>
             <ul className="space-y-2">
               <li className="flex items-center">
@@ -166,20 +151,14 @@ const Footer = () => {
                 </motion.a>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
 
-        <motion.div
-          className="mt-12 pt-8 border-t border-white/10 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
+        <div className="mt-12 pt-8 border-t border-white/10 text-center">
           <p className="text-white/70 text-sm">
             &copy; {currentYear} Punto de Partida - Un inicio con propósito. Todos los derechos reservados.
           </p>
-        </motion.div>
+        </div>
       </div>
     </footer>
   )

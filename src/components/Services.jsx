@@ -1,5 +1,5 @@
-import React, { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import React from 'react'
+import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
 const services = [
@@ -55,9 +55,6 @@ const services = [
 ]
 
 const Services = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
-
   const scrollToSection = (url) => {
     const element = document.querySelector(url)
     if (element) {
@@ -66,12 +63,12 @@ const Services = () => {
   }
 
   return (
-    <section id="services" className="py-24" ref={ref}>
+    <section id="services" className="py-24">
       <div className="container">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           <h2 className="section-title">Nuestros Servicios</h2>
@@ -87,7 +84,7 @@ const Services = () => {
               key={service.slug}
               className="card group"
               initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
             >
@@ -118,12 +115,7 @@ const Services = () => {
           ))}
         </div>
         
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-        >
+        <div className="mt-16 text-center">
           <div className="max-w-2xl mx-auto p-8 bg-warm rounded-lg">
             <h3 className="text-xl font-medium text-primary mb-4">¿Necesitas más información?</h3>
             <p className="text-primary/80 mb-6">
@@ -143,7 +135,7 @@ const Services = () => {
               Solicitar consulta
             </motion.a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

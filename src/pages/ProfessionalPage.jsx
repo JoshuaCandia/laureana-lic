@@ -155,7 +155,7 @@ const ProfessionalPage = () => {
       <Navbar />
 
       <main className="pt-20">
-        {/* Hero Section */}
+        {/* Hero Section - SOLO ESTA SECCIÓN TIENE ANIMACIONES */}
         <section className="py-16 bg-secondary/30">
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -204,32 +204,21 @@ const ProfessionalPage = () => {
           </div>
         </section>
 
-        {/* Especialidades */}
+        {/* Especialidades - SIN ANIMACIONES */}
         <section className="py-16">
           <div className="container">
-            <motion.div
-              className="text-center mb-12"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
+            <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-serif font-medium text-primary mb-4">
                 Áreas de Especialización
               </h2>
               <div className="divider" />
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {professional.strengths.map((strength, index) => (
-                <motion.div
+                <div
                   key={index}
-                  className="bg-white p-6 rounded-lg shadow-sm border border-light text-center"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -5 }}
+                  className="bg-white p-6 rounded-lg shadow-sm border border-light text-center hover:shadow-md transition-shadow"
                 >
                   <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
                     <svg
@@ -248,37 +237,25 @@ const ProfessionalPage = () => {
                     </svg>
                   </div>
                   <p className="text-primary font-medium">{strength}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CV Resumido */}
+        {/* CV Resumido - SIN ANIMACIONES */}
         <section className="py-16 bg-secondary/30">
           <div className="container">
-            <motion.div
-              className="text-center mb-12"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
+            <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-serif font-medium text-primary mb-4">
                 Curriculum Vitae
               </h2>
               <div className="divider" />
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Formación */}
-              <motion.div
-                className="bg-white p-8 rounded-lg shadow-sm"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
+              <div className="bg-white p-8 rounded-lg shadow-sm">
                 <h3 className="text-xl font-medium text-primary mb-6 flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -304,29 +281,16 @@ const ProfessionalPage = () => {
                 </h3>
                 <ul className="space-y-4">
                   {professional.cv.education.map((item, index) => (
-                    <motion.li
-                      key={index}
-                      className="flex items-start"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                    >
+                    <li key={index} className="flex items-start">
                       <span className="text-accent mr-3 mt-1">•</span>
                       <span className="text-primary/80">{item}</span>
-                    </motion.li>
+                    </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
 
               {/* Experiencia */}
-              <motion.div
-                className="bg-white p-8 rounded-lg shadow-sm"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
+              <div className="bg-white p-8 rounded-lg shadow-sm">
                 <h3 className="text-xl font-medium text-primary mb-6 flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -346,29 +310,16 @@ const ProfessionalPage = () => {
                 </h3>
                 <ul className="space-y-4">
                   {professional.cv.experience.map((item, index) => (
-                    <motion.li
-                      key={index}
-                      className="flex items-start"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                    >
+                    <li key={index} className="flex items-start">
                       <span className="text-accent mr-3 mt-1">•</span>
                       <span className="text-primary/80">{item}</span>
-                    </motion.li>
+                    </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
 
               {/* Certificaciones */}
-              <motion.div
-                className="bg-white p-8 rounded-lg shadow-sm"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
+              <div className="bg-white p-8 rounded-lg shadow-sm">
                 <h3 className="text-xl font-medium text-primary mb-6 flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -388,29 +339,16 @@ const ProfessionalPage = () => {
                 </h3>
                 <ul className="space-y-4">
                   {professional.cv.certifications.map((item, index) => (
-                    <motion.li
-                      key={index}
-                      className="flex items-start"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                    >
+                    <li key={index} className="flex items-start">
                       <span className="text-accent mr-3 mt-1">•</span>
                       <span className="text-primary/80">{item}</span>
-                    </motion.li>
+                    </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
 
               {/* Publicaciones */}
-              <motion.div
-                className="bg-white p-8 rounded-lg shadow-sm"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                viewport={{ once: true }}
-              >
+              <div className="bg-white p-8 rounded-lg shadow-sm">
                 <h3 className="text-xl font-medium text-primary mb-6 flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -430,34 +368,21 @@ const ProfessionalPage = () => {
                 </h3>
                 <ul className="space-y-4">
                   {professional.cv.publications.map((item, index) => (
-                    <motion.li
-                      key={index}
-                      className="flex items-start"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                    >
+                    <li key={index} className="flex items-start">
                       <span className="text-accent mr-3 mt-1">•</span>
                       <span className="text-primary/80">{item}</span>
-                    </motion.li>
+                    </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* CTA Section - SIN ANIMACIONES */}
         <section className="py-16">
           <div className="container">
-            <motion.div
-              className="bg-accent/10 rounded-lg p-8 text-center"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
+            <div className="bg-accent/10 rounded-lg p-8 text-center">
               <h3 className="text-2xl font-medium text-primary mb-4">
                 ¿Quieres agendar una consulta?
               </h3>
@@ -467,15 +392,10 @@ const ProfessionalPage = () => {
                 {professional.name.split(" ")[2]}y comenzar tu proceso de
                 acompañamiento profesional.
               </p>
-              <motion.a
-                href="/#contact"
-                className="btn-primary"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <a href="/#contact" className="btn-primary">
                 Contactar ahora
-              </motion.a>
-            </motion.div>
+              </a>
+            </div>
           </div>
         </section>
       </main>
