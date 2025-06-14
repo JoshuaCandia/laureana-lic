@@ -74,8 +74,9 @@ const Hero = () => {
             </m.div>
           </div>
 
+          {/* Elemento corregido para centrado en móvil */}
           <m.div
-            className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+            className="w-full flex justify-center mt-12 md:mt-0 md:absolute md:bottom-4 md:left-0 md:right-0"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}

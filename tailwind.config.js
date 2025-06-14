@@ -4,9 +4,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#345c9c", // Azul noche - encabezados, texto fuerte
-        secondary: "#fdfdfd", // Blanco nieve - fondo principal
-        accent: "#6ba8e5", // Azul cielo - botones, íconos llamativos
+        primary: "#494544", // Azul noche - encabezados, texto fuerte
+        secondary: "#CCBBA9", // Blanco nieve - fondo principal
+        accent: "#C5896F", // Azul cielo - botones, íconos llamativos
         muted: "#7a7a7a", // Gris humo - texto secundario
         light: "#e9f3fb", // Azul cielo muy claro - fondos alternativos suaves
         dark: "#1f2e5c", // Azul oscuro para contrastes o pie de página
