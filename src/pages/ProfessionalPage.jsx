@@ -1,8 +1,8 @@
+import { m } from "framer-motion";
 import React from "react";
-import { useParams, Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import Navbar from "../components/Navbar";
+import { Link, useParams } from "react-router-dom";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const professionals = [
   {
@@ -159,7 +159,7 @@ const ProfessionalPage = () => {
         <section className="py-16 bg-secondary/30">
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
@@ -171,9 +171,9 @@ const ProfessionalPage = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-              </motion.div>
+              </m.div>
 
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -187,7 +187,7 @@ const ProfessionalPage = () => {
                 <p className="text-primary/80 text-lg leading-relaxed mb-8">
                   {professional.description}
                 </p>
-                <motion.a
+                <m.a
                   href="#contact"
                   onClick={(e) => {
                     e.preventDefault();
@@ -198,8 +198,8 @@ const ProfessionalPage = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   Agendar consulta
-                </motion.a>
-              </motion.div>
+                </m.a>
+              </m.div>
             </div>
           </div>
         </section>

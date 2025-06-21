@@ -1,9 +1,15 @@
+import { m } from "framer-motion";
 import React from "react";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useAnimation } from "../contexts/AnimationContext";
+import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import { services } from "../mocks/services";
+import AnimatedCard from "./AnimatedCard";
 
 const Services = () => {
+  const { animationConfig } = useAnimation();
+  const [sectionRef, isSectionVisible] = useIntersectionObserver();
+
   const scrollToSection = (url) => {
     const element = document.querySelector(url);
     if (element) {
@@ -14,11 +20,10 @@ const Services = () => {
   return (
     <section id="services" className="py-24">
       <div className="container">
-        <motion.div
+        <m.div
+          ref={sectionRef}
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          {...animationConfig.slideUpOnScroll(isSectionVisible)}
         >
           <h2 className="section-title">Nuestros Servicios</h2>
           <div className="divider" />
@@ -26,23 +31,17 @@ const Services = () => {
             Ofrecemos una amplia gama de servicios especializados para
             acompañarte en cada etapa de tu desarrollo personal y profesional.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <motion.div
-              key={service.slug}
-              className="card group"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-            >
+            <AnimatedCard key={service.slug} index={index}>
               <div className="aspect-[16/10] overflow-hidden">
-                <motion.img
+                <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105"
+                  loading="lazy"
                 />
               </div>
               <div className="p-6">
@@ -71,16 +70,23 @@ const Services = () => {
 
                 <Link
                   to={`/servicio/${service.slug}`}
-                  className="inline-block text-accent hover:text-accent/80 text-sm font-medium transition-colors"
+                  className="inline-block text-accent hover:text-accent/80 text-sm font-medium transition-colors duration-200"
                 >
                   Ver más información →
                 </Link>
               </div>
-            </motion.div>
+            </AnimatedCard>
           ))}
         </div>
 
-        <div className="mt-16 text-center">
+        <m.div
+          className="mt-16 text-center"
+          {...animationConfig.slideUpOnScroll(isSectionVisible)}
+          transition={{
+            ...animationConfig.slideUpOnScroll(isSectionVisible).transition,
+            delay: 0.5,
+          }}
+        >
           <div className="max-w-2xl mx-auto p-8 bg-warm rounded-lg">
             <h3 className="text-xl font-medium text-primary mb-4">
               ¿Necesitas más información?
@@ -90,20 +96,19 @@ const Services = () => {
               personalizada y descubre cómo podemos ayudarte a alcanzar tus
               objetivos.
             </p>
-            <motion.a
+            <m.a
               href="#contact"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection("#contact");
               }}
               className="btn-primary"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              {...animationConfig.hover}
             >
               Solicitar consulta
-            </motion.a>
+            </m.a>
           </div>
-        </div>
+        </m.div>
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Link, useLocation, useNavigate } from "react-router-dom"; // Importamos useLocation y useNavigate
+import { m } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom"; // Importamos useLocation y useNavigate
 
 const navItems = [
   { name: "Inicio", url: "#hero" },
@@ -39,7 +39,7 @@ const Navbar = () => {
   };
 
   return (
-    <motion.header
+    <m.header
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : ""
       }`}
@@ -49,7 +49,7 @@ const Navbar = () => {
     >
       <div className="container">
         <nav className="flex items-center justify-between h-16 md:h-20">
-          <motion.div
+          <m.div
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
@@ -63,7 +63,7 @@ const Navbar = () => {
             >
               Punto de Partida
             </a>
-          </motion.div>
+          </m.div>
 
           {/* Mobile menu button */}
           <button
@@ -71,7 +71,7 @@ const Navbar = () => {
             className="lg:hidden flex items-center text-primary p-2 rounded-lg hover:bg-stone-light relative z-10"
             aria-label="Toggle menu"
           >
-            <motion.svg
+            <m.svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
               fill="none"
@@ -86,13 +86,13 @@ const Navbar = () => {
                 strokeWidth="2"
                 d="M4 6h16M4 12h16M4 18h16"
               />
-            </motion.svg>
+            </m.svg>
           </button>
 
           {/* Desktop navigation */}
           <ul className="hidden lg:flex items-center space-x-8">
             {navItems.map((item, index) => (
-              <motion.li
+              <m.li
                 key={item.name}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -108,9 +108,9 @@ const Navbar = () => {
                 >
                   {item.name}
                 </a>
-              </motion.li>
+              </m.li>
             ))}
-            <motion.li
+            <m.li
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: navItems.length * 0.1 + 0.3 }}
@@ -125,13 +125,13 @@ const Navbar = () => {
               >
                 Contáctanos
               </a>
-            </motion.li>
+            </m.li>
           </ul>
         </nav>
       </div>
 
       {/* Mobile navigation */}
-      <motion.div
+      <m.div
         className="lg:hidden"
         initial={false}
         animate={
@@ -146,7 +146,7 @@ const Navbar = () => {
           <div className="container py-4 pt-20">
             <ul className="flex flex-col space-y-4">
               {navItems.map((item, index) => (
-                <motion.li
+                <m.li
                   key={item.name}
                   initial={{ opacity: 0, x: -20 }}
                   animate={
@@ -166,9 +166,9 @@ const Navbar = () => {
                   >
                     {item.name}
                   </a>
-                </motion.li>
+                </m.li>
               ))}
-              <motion.li
+              <m.li
                 initial={{ opacity: 0, x: -20 }}
                 animate={
                   isMobileMenuOpen
@@ -187,12 +187,12 @@ const Navbar = () => {
                 >
                   Contáctanos
                 </a>
-              </motion.li>
+              </m.li>
             </ul>
           </div>
         </div>
-      </motion.div>
-    </motion.header>
+      </m.div>
+    </m.header>
   );
 };
 

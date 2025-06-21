@@ -1,5 +1,5 @@
+import { m } from "framer-motion";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -42,7 +42,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-24 bg-secondary/30">
       <div className="container">
-        <motion.div
+        <m.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -54,10 +54,10 @@ const Contact = () => {
             ¿Tienes alguna consulta o quieres agendar una cita? Completa el
             formulario y nos pondremos en contacto contigo lo antes posible.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -173,19 +173,19 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <motion.button
+                  <m.button
                     type="submit"
                     className="w-full bg-accent text-white px-6 py-3 rounded hover:bg-accent/90 transition-all text-base font-medium"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
                     Enviar mensaje
-                  </motion.button>
+                  </m.button>
                 </div>
               </form>
 
               {showSuccess && (
-                <motion.div
+                <m.div
                   className="mt-4 p-4 bg-green-50 text-green-700 rounded-md"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -193,12 +193,12 @@ const Contact = () => {
                 >
                   Tu mensaje ha sido enviado correctamente. Nos pondremos en
                   contacto contigo pronto.
-                </motion.div>
+                </m.div>
               )}
             </div>
-          </motion.div>
+          </m.div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -359,7 +359,7 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

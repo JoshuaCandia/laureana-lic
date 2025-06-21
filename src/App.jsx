@@ -1,19 +1,22 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import HomePage from './pages/HomePage'
-import ProfessionalPage from './pages/ProfessionalPage'
-import ServicePage from './pages/ServicePage'
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { AnimationProvider } from "./contexts/AnimationContext";
+import HomePage from "./pages/HomePage";
+import ProfessionalPage from "./pages/ProfessionalPage";
+import ServicePage from "./pages/ServicePage";
 
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/profesional/:slug" element={<ProfessionalPage />} />
-        <Route path="/servicio/:slug" element={<ServicePage />} />
-      </Routes>
-    </div>
-  )
+    <AnimationProvider>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/profesional/:slug" element={<ProfessionalPage />} />
+          <Route path="/servicio/:slug" element={<ServicePage />} />
+        </Routes>
+      </div>
+    </AnimationProvider>
+  );
 }
 
-export default App
+export default App;
