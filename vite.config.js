@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     // Optimizaciones para mejor rendimiento
     target: "esnext",
-    minify: "terser",
+    minify: "esbuild",
     rollupOptions: {
       output: {
         manualChunks: {
