@@ -5,14 +5,19 @@ export const professionals = [
     title: "Licenciada en Psicología",
     image: "https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg",
     description:
-      "Actualmente cursa la Maestría en Psicología Organizacional con orientación gerencial.",
+      "Actualmente cursa la Maestría en Psicología Organizacional con orientación gerencial. Su enfoque combina el análisis del comportamiento humano con herramientas de gestión, liderazgo y desarrollo del talento, aplicadas tanto en el ámbito educativo como en el organizacional. Especialista en procesos de selección de personal y desarrollo organizacional.",
     fullDescription:
-      "Su enfoque combina el análisis del comportamiento humano con herramientas de gestión, liderazgo y desarrollo del talento, aplicadas tanto en el ámbito educativo como en el organizacional.",
+      "Su enfoque combina el análisis del comportamiento humano con herramientas de gestión, liderazgo y desarrollo del talento, aplicadas tanto en el ámbito educativo como en el organizacional. Con sólida formación en psicología organizacional, se especializa en la evaluación de competencias, diseño de perfiles laborales y procesos de selección de personal. Su trabajo se centra en el desarrollo del potencial humano dentro de las organizaciones, aplicando metodologías innovadoras para la gestión del talento y el liderazgo efectivo.",
     strengths: [
       "Psicología organizacional y gerencial",
       "Análisis del comportamiento humano",
       "Herramientas de gestión y liderazgo",
       "Desarrollo del talento",
+      "Selección de personal por competencias",
+      "Evaluación de perfiles laborales",
+      "Procesos de reclutamiento y selección",
+      "Desarrollo organizacional",
+      "Gestión del cambio organizacional",
       "Aplicación en ámbitos educativo y organizacional",
     ],
   },

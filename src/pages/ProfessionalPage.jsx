@@ -1,5 +1,5 @@
 import { m } from "framer-motion";
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -8,6 +8,12 @@ import { professionals } from "../mocks/professionals";
 const ProfessionalPage = () => {
   const { slug } = useParams();
   const professional = professionals.find((p) => p.slug === slug);
+
+  // Animación de entrada de página
+  useEffect(() => {
+    document.body.classList.add('page-enter');
+    return () => document.body.classList.remove('page-enter');
+  }, []);
 
   if (!professional) {
     return (
