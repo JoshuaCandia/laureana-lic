@@ -3,46 +3,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-
-const services = [
-  {
-    slug: "orientacion-vocacional",
-    title: "Orientación Vocacional",
-    description:
-      "Acompañamiento personalizado para descubrir tu vocación y elegir la carrera que mejor se adapte a tus intereses y habilidades.",
-    image: "https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg",
-    icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
-    fullDescription:
-      "Nuestro programa de orientación vocacional está diseñado para acompañar a adolescentes y jóvenes adultos en uno de los momentos más importantes de sus vidas: la elección de su futuro profesional. A través de un proceso integral que combina evaluaciones psicométricas, exploración de intereses y análisis de aptitudes, ayudamos a cada persona a descubrir su verdadera vocación.",
-    target: "Adolescentes y jóvenes adultos (15-25 años)",
-    duration: "4-6 sesiones individuales de 60 minutos",
-    methodology: [
-      "Entrevista inicial para conocer expectativas y contexto familiar",
-      "Aplicación de tests de intereses vocacionales (Kuder, Holland)",
-      "Evaluación de aptitudes específicas",
-      "Exploración de valores personales y estilo de vida deseado",
-      "Información detallada sobre carreras y campo laboral",
-      "Elaboración de un plan de acción personalizado",
-    ],
-    benefits: [
-      "Mayor claridad sobre intereses y aptitudes personales",
-      "Reducción de la ansiedad ante la elección vocacional",
-      "Información actualizada sobre carreras y mercado laboral",
-      "Desarrollo de habilidades para la toma de decisiones",
-      "Acompañamiento en el proceso de transición",
-      "Seguimiento post-elección",
-    ],
-    includes: [
-      "Evaluación psicométrica completa",
-      "Informe detallado de resultados",
-      "Guía de carreras personalizada",
-      "Material informativo sobre universidades",
-      "Sesión de seguimiento a los 6 meses",
-      "Acceso a plataforma online con recursos",
-    ],
-  },
-  // Add other services here with similar structure...
-];
+import { services } from "../mocks/services";
 
 const ServicePage = () => {
   const { slug } = useParams();
@@ -70,12 +31,14 @@ const ServicePage = () => {
     }
   };
 
+  const categoryColor = service.category === 'educativo' ? 'blue' : 'green';
+
   return (
     <>
       <Navbar />
 
       <main className="pt-20">
-        {/* Hero Section - SOLO ESTA SECCIÓN TIENE ANIMACIONES */}
+        {/* Hero Section */}
         <section className="py-16 bg-secondary/30">
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -84,10 +47,14 @@ const ServicePage = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mb-6">
+                <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-6 ${
+                  categoryColor === 'blue' ? 'bg-blue-100' : 'bg-green-100'
+                }`}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-8 w-8 text-accent"
+                    className={`h-8 w-8 ${
+                      categoryColor === 'blue' ? 'text-blue-600' : 'text-green-600'
+                    }`}
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -103,9 +70,14 @@ const ServicePage = () => {
                 <h1 className="text-3xl md:text-4xl font-serif font-medium text-primary mb-6">
                   {service.title}
                 </h1>
-                <p className="text-primary/80 text-lg leading-relaxed mb-8">
-                  {service.fullDescription}
+                <p className="text-primary/80 text-lg leading-relaxed mb-6">
+                  {service.description}
                 </p>
+                {service.fullDescription && (
+                  <p className="text-primary/80 leading-relaxed mb-8">
+                    {service.fullDescription}
+                  </p>
+                )}
                 <div className="flex flex-wrap gap-4">
                   <m.a
                     href="#detalles"
@@ -147,61 +119,87 @@ const ServicePage = () => {
           </div>
         </section>
 
-        {/* Información General - SIN ANIMACIONES */}
+        {/* Detalles del servicio */}
         <section id="detalles" className="py-16">
           <div className="container">
+            {/* Highlights */}
+            {service.highlights && (
+              <div className="mb-12">
+                <h3 className="text-2xl font-medium text-primary mb-6 text-center">
+                  Características principales
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {service.highlights.map((highlight, index) => (
+                    <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-light">
+                      <div className="flex items-start">
+                        <span className="text-accent mr-3 mt-1">👉</span>
+                        <p className="text-primary/80">{highlight}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Servicios específicos */}
+            {service.services && (
+              <div className="mb-12">
+                <h3 className="text-2xl font-medium text-primary mb-6 text-center">
+                  Servicios incluidos
+                </h3>
+                <div className="bg-white p-8 rounded-lg shadow-sm border border-light">
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {service.services.map((item, index) => (
+                      <li key={index} className="flex items-start">
+                        <span className="text-accent mr-3 mt-1">•</span>
+                        <span className="text-primary/80">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )}
+
+            {/* Información adicional */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-8 w-8 text-accent"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                    />
-                  </svg>
+              {service.target && (
+                <div className="text-center">
+                  <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
+                    categoryColor === 'blue' ? 'bg-blue-100' : 'bg-green-100'
+                  }`}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={`h-8 w-8 ${
+                        categoryColor === 'blue' ? 'text-blue-600' : 'text-green-600'
+                      }`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-medium text-primary mb-2">
+                    Dirigido a
+                  </h3>
+                  <p className="text-primary/80">{service.target}</p>
                 </div>
-                <h3 className="text-lg font-medium text-primary mb-2">
-                  Dirigido a
-                </h3>
-                <p className="text-primary/80">{service.target}</p>
-              </div>
+              )}
 
               <div className="text-center">
-                <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
+                <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
+                  categoryColor === 'blue' ? 'bg-blue-100' : 'bg-green-100'
+                }`}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-8 w-8 text-accent"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-medium text-primary mb-2">
-                  Duración
-                </h3>
-                <p className="text-primary/80">{service.duration}</p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-8 w-8 text-accent"
+                    className={`h-8 w-8 ${
+                      categoryColor === 'blue' ? 'text-blue-600' : 'text-green-600'
+                    }`}
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -217,14 +215,53 @@ const ServicePage = () => {
                 <h3 className="text-lg font-medium text-primary mb-2">
                   Modalidad
                 </h3>
-                <p className="text-primary/80">Presencial y Online</p>
+                <p className="text-primary/80">Presencial, Virtual e Híbrida</p>
+              </div>
+
+              <div className="text-center">
+                <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
+                  categoryColor === 'blue' ? 'bg-blue-100' : 'bg-green-100'
+                }`}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={`h-8 w-8 ${
+                      categoryColor === 'blue' ? 'text-blue-600' : 'text-green-600'
+                    }`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-medium text-primary mb-2">
+                  Ubicación
+                </h3>
+                <p className="text-primary/80">CABA y Zona Oeste</p>
               </div>
             </div>
+
+            {service.note && (
+              <div className="bg-accent/10 p-6 rounded-lg text-center mb-12">
+                <p className="text-primary font-medium">{service.note}</p>
+              </div>
+            )}
           </div>
         </section>
 
-        {/* CTA Section - SIN ANIMACIONES */}
-        <section className="py-16">
+        {/* CTA Section */}
+        <section className="py-16 bg-secondary/30">
           <div className="container">
             <div className="bg-accent/10 rounded-lg p-8 text-center">
               <h3 className="text-2xl font-medium text-primary mb-4">
@@ -232,7 +269,7 @@ const ServicePage = () => {
               </h3>
               <p className="text-primary/80 mb-6 max-w-2xl mx-auto">
                 Contáctanos para obtener más información sobre{" "}
-                {service.title.toLowerCase()}y descubre cómo podemos ayudarte a
+                {service.title.toLowerCase()} y descubre cómo podemos ayudarte a
                 alcanzar tus objetivos.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
