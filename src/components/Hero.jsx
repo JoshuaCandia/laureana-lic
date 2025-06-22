@@ -36,7 +36,7 @@ const Hero = () => {
               Punto de Partida
             </h1>
             <p className="text-xl sm:text-2xl md:text-3xl text-accent font-serif italic mb-6 md:mb-8">
-              Inicios con propósito
+              Inicios con propósito Inicios con propósito
             </p>
             <p className="text-base sm:text-lg md:text-xl text-primary/80 mb-6 md:mb-8 max-w-lg mx-auto lg:mx-0">
               Salud mental y acompañamiento integral en el ámbito educativo y
