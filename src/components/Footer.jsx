@@ -24,21 +24,44 @@ const Footer = () => {
             <h3 className="text-xl font-serif font-medium mb-4">Servicios</h3>
             <ul className="space-y-2">
               <li>
-                <span className="text-white/70">Orientación Vocacional</span>
+                <a
+                  href="/servicio/orientacion-vocacional"
+                  className="text-white/70 hover:text-accent transition-colors"
+                >
+                  Orientación Vocacional
+                </a>
               </li>
               <li>
-                <span className="text-white/70">
+                <a
+                  href="/servicio/evaluaciones-neurocognitivas"
+                  className="text-white/70 hover:text-accent transition-colors"
+                >
                   Evaluaciones Neurocognitivas
-                </span>
+                </a>
               </li>
               <li>
-                <span className="text-white/70">Selección de Personal</span>
+                <a
+                  href="/servicio/seleccion-personal"
+                  className="text-white/70 hover:text-accent transition-colors"
+                >
+                  Selección de Personal
+                </a>
               </li>
               <li>
-                <span className="text-white/70">Capacitación Docente</span>
+                <a
+                  href="/servicio/capacitacion-docente"
+                  className="text-white/70 hover:text-accent transition-colors"
+                >
+                  Capacitación Docente
+                </a>
               </li>
               <li>
-                <span className="text-white/70">Neuroliderazgo</span>
+                <a
+                  href="/servicio/neuroliderazgo"
+                  className="text-white/70 hover:text-accent transition-colors"
+                >
+                  Neuroliderazgo
+                </a>
               </li>
             </ul>
           </div>

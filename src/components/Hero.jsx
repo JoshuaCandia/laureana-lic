@@ -39,10 +39,10 @@ const Hero = () => {
               Inicios con propósito
             </p>
             <p className="text-base sm:text-lg md:text-xl text-primary/80 mb-6 md:mb-8 max-w-lg mx-auto lg:mx-0">
-              Salud mental y acompañamiento integral en el ámbito educativo y clínico. 
-              Consultora formada por profesionales de la salud mental y la educación, 
-              con amplia trayectoria en orientación vocacional, evaluaciones neurocognitivas 
-              y asesoramiento institucional.
+              Salud mental y acompañamiento integral en el ámbito educativo y
+              clínico. Consultora formada por profesionales de la salud mental y
+              la educación, con amplia trayectoria en orientación vocacional,
+              evaluaciones neurocognitivas y asesoramiento institucional.
             </p>
             <m.a
               href="#contact"
@@ -58,22 +58,24 @@ const Hero = () => {
           </m.div>
 
           <m.div
-            className="relative order-1 lg:order-2 mx-auto lg:mx-0 w-full max-w-md"
+            className="relative order-1 lg:order-2 mx-auto lg:mx-0 w-full max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl"
             {...animationConfig.slideInRight}
             transition={{
               ...animationConfig.slideInRight.transition,
               delay: 0.4,
             }}
           >
-            <div className="aspect-[4/5] md:aspect-[3/4] rounded-lg overflow-hidden">
+            <div className="aspect-[4/5] md:aspect-[3/4] lg:aspect-[4/5] xl:aspect-[3/4] rounded-lg lg:rounded-xl overflow-hidden shadow-lg lg:shadow-xl">
               <img
                 src="/Tu valor no se mide por tu productividad (2).png"
                 alt="Punto de Partida - Salud mental y acompañamiento integral"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
             </div>
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 md:w-24 md:h-24 bg-accent/20 rounded-lg -z-10" />
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 md:w-24 md:h-24 lg:w-32 lg:h-32 bg-accent/20 rounded-lg lg:rounded-xl -z-10" />
+            {/* Elemento decorativo adicional para desktop */}
+            <div className="hidden lg:block absolute -top-6 -right-6 w-20 h-20 bg-primary/10 rounded-full -z-10" />
           </m.div>
         </div>
 
