@@ -36,13 +36,13 @@ const Hero = () => {
               Punto de Partida
             </h1>
             <p className="text-xl sm:text-2xl md:text-3xl text-accent font-serif italic mb-6 md:mb-8">
-              Un inicio con propósito
+              Inicios con propósito
             </p>
             <p className="text-base sm:text-lg md:text-xl text-primary/80 mb-6 md:mb-8 max-w-lg mx-auto lg:mx-0">
-              Consultora especializada en educación y evaluaciones
-              neurocognitivas. Brindamos orientación, evaluación y
-              acompañamiento para potenciar el desarrollo de niños, adolescentes
-              y adultos.
+              Salud mental y acompañamiento integral en el ámbito educativo y clínico. 
+              Consultora formada por profesionales de la salud mental y la educación, 
+              con amplia trayectoria en orientación vocacional, evaluaciones neurocognitivas 
+              y asesoramiento institucional.
             </p>
             <m.a
               href="#contact"
@@ -67,8 +67,8 @@ const Hero = () => {
           >
             <div className="aspect-[4/5] md:aspect-[3/4] rounded-lg overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg"
-                alt="Evaluación neurocognitiva y orientación educativa"
+                src="/Tu valor no se mide por tu productividad (2).png"
+                alt="Punto de Partida - Salud mental y acompañamiento integral"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
