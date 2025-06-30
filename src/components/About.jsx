@@ -22,29 +22,36 @@ const About = () => {
           <div className="divider" />
           <div className="max-w-4xl mx-auto text-left space-y-6">
             <p className="text-primary/80 leading-relaxed">
-              <strong>PUNTO DE PARTIDA</strong> es una consultora formada por profesionales de la salud mental y la educación, 
-              con amplia trayectoria en orientación vocacional, selección de personal educativo, evaluaciones neurocognitivas 
-              y asesoramiento institucional.
+              <strong>PUNTO DE PARTIDA</strong> es una consultora formada por
+              profesionales de la salud mental y la educación, con amplia
+              trayectoria en orientación vocacional, selección de personal
+              educativo, evaluaciones neurocognitivas y asesoramiento
+              institucional.
             </p>
             <p className="text-primary/80 leading-relaxed">
-              Creemos que cada inicio merece acompañamiento, escucha y herramientas concretas para tomar decisiones con propósito.
+              Creemos que cada inicio merece acompañamiento, escucha y
+              herramientas concretas para tomar decisiones con propósito.
             </p>
             <p className="text-primary/80 leading-relaxed">
-              Trabajamos con niños, adolescentes, familias, instituciones educativas y organizaciones, poniendo foco en el 
-              desarrollo humano, el bienestar y el crecimiento profesional y personal.
+              Trabajamos con niños, adolescentes, familias, instituciones
+              educativas y organizaciones, poniendo foco en el desarrollo
+              humano, el bienestar y el crecimiento profesional y personal.
             </p>
             <p className="text-primary/80 leading-relaxed">
-              Nuestro trabajo se basa en la escucha activa, el respeto por los tiempos de cada proceso y el diseño de 
-              intervenciones a medida, pensadas para potenciar recursos y abrir caminos.
+              Nuestro trabajo se basa en la escucha activa, el respeto por los
+              tiempos de cada proceso y el diseño de intervenciones a medida,
+              pensadas para potenciar recursos y abrir caminos.
             </p>
             <p className="text-primary/80 leading-relaxed">
-              Trabajamos en conjunto desde una mirada integral y articulada, ofreciendo espacios de evaluación, orientación 
-              y asesoramiento para acompañar a personas e instituciones en la toma de decisiones, la mejora del desempeño 
-              y el bienestar general.
+              Trabajamos en conjunto desde una mirada integral y articulada,
+              ofreciendo espacios de evaluación, orientación y asesoramiento
+              para acompañar a personas e instituciones en la toma de
+              decisiones, la mejora del desempeño y el bienestar general.
             </p>
             <p className="text-primary/80 leading-relaxed font-medium">
-              Contamos con oficinas en Ciudad de Buenos Aires y Zona Oeste, nuestro trabajo se desarrolla de forma 
-              presencial, virtual e híbrida.
+              Contamos con oficinas en Ciudad de Buenos Aires y Zona Oeste,
+              nuestro trabajo se desarrolla de forma presencial, virtual e
+              híbrida.
             </p>
           </div>
         </m.div>
@@ -64,11 +71,8 @@ const About = () => {
                 <h3 className="text-xl font-medium text-primary mb-2">
                   {professional.name}
                 </h3>
-                <p className="text-accent font-medium mb-3">
+                <p className="text-accent font-medium mb-4">
                   {professional.title}
-                </p>
-                <p className="text-primary/80 text-sm mb-4">
-                  {professional.description}
                 </p>
 
                 <Link

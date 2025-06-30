@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useAnimation } from "../contexts/AnimationContext";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
-import { getServicesByCategory, getCategories } from "../mocks/services";
+import { getCategories, getServicesByCategory } from "../mocks/services";
 import AnimatedCard from "./AnimatedCard";
 
 const Services = () => {
@@ -29,24 +29,30 @@ const Services = () => {
           <h2 className="section-title">Nuestros Servicios</h2>
           <div className="divider" />
           <p className="section-subtitle mb-8">
-            Ofrecemos una variedad de servicios dirigidos a individuos, instituciones educativas y organizaciones. 
-            Nuestro trabajo se basa en principios de las neurociencias, la innovación educativa y la psicología 
-            organizacional, buscando siempre intervenciones efectivas, éticas y basadas en la evidencia.
+            Ofrecemos una variedad de servicios dirigidos a individuos,
+            instituciones educativas y organizaciones. Nuestro trabajo se basa
+            en principios de las neurociencias, la innovación educativa y la
+            psicología organizacional, buscando siempre intervenciones
+            efectivas, éticas y basadas en la evidencia.
           </p>
         </m.div>
 
         {categories.map((category, categoryIndex) => {
           const categoryServices = getServicesByCategory(category.key);
-          
+
           return (
             <div key={category.key} className="mb-20">
               {/* Título de categoría */}
               <div className="text-center mb-12">
                 <div className="flex items-center justify-center mb-4">
-                  <div className={`w-16 h-16 rounded-full flex items-center justify-center mr-4 ${
-                    category.key === 'educativo' ? 'bg-blue-100' : 'bg-green-100'
-                  }`}>
-                    {category.key === 'educativo' ? (
+                  <div
+                    className={`w-16 h-16 rounded-full flex items-center justify-center mr-4 ${
+                      category.key === "educativo"
+                        ? "bg-blue-100"
+                        : "bg-green-100"
+                    }`}
+                  >
+                    {category.key === "educativo" ? (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-8 w-8 text-blue-600"
@@ -87,7 +93,10 @@ const Services = () => {
               {/* Servicios de la categoría */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {categoryServices.map((service, index) => (
-                  <AnimatedCard key={service.slug} index={index + categoryIndex * 10}>
+                  <AnimatedCard
+                    key={service.slug}
+                    index={index + categoryIndex * 10}
+                  >
                     <div className="aspect-[16/10] overflow-hidden">
                       <img
                         src={service.image}
@@ -97,49 +106,9 @@ const Services = () => {
                       />
                     </div>
                     <div className="p-6">
-                      <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${
-                        category.key === 'educativo' ? 'bg-blue-100' : 'bg-green-100'
-                      }`}>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className={`h-6 w-6 ${
-                            category.key === 'educativo' ? 'text-blue-600' : 'text-green-600'
-                          }`}
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d={service.icon}
-                          />
-                        </svg>
-                      </div>
-                      <h4 className="text-xl font-medium text-primary mb-3">
+                      <h4 className="text-xl font-medium text-primary mb-4">
                         {service.title}
                       </h4>
-                      <p className="text-primary/80 leading-relaxed mb-4 text-sm">
-                        {service.description}
-                      </p>
-
-                      {service.highlights && (
-                        <div className="mb-4">
-                          {service.highlights.map((highlight, idx) => (
-                            <div key={idx} className="flex items-start mb-2">
-                              <span className="text-accent mr-2 mt-1 text-xs">👉</span>
-                              <span className="text-primary/70 text-xs">{highlight}</span>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-
-                      {service.target && (
-                        <p className="text-accent font-medium text-sm mb-4">
-                          Ideal para: {service.target}
-                        </p>
-                      )}
 
                       <Link
                         to={`/servicio/${service.slug}`}

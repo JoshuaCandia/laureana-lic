@@ -40,13 +40,17 @@ export const professionals = [
     ],
   },
   {
-    slug: "jimena",
-    name: "Jimena",
+    slug: "jimena-ines-castineiras",
+    name: "Castiñeiras, Jimena Inés",
     title: "Licenciada en Psicología – Magister en neuropsicología",
     image: "https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg",
     description: "Especialista en evaluación e intervención neurocognitiva.",
     fullDescription:
       "Su trayectoria profesional se centra en la promoción de la salud mental y la selección de perfiles para desempeñarse en diferentes puestos de trabajo. Actualmente se desempeña como representante legal de una institución educativa.",
+    offices: [
+      "General Félix Olazábal 1044 3° piso Oficina 308. Edificio Los Manzanos. (1714) Ituzaingó Norte - Zona Oeste",
+      "Alicia M. de Justo 1150 2° piso Oficina 205 A (C1107AAX) Puerto Madero - CABA",
+    ],
     strengths: [
       "Evaluación neurocognitiva",
       "Intervención neurocognitiva",
