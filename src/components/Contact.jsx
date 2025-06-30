@@ -186,49 +186,89 @@ Mensaje: ${formData.message}
             >
               <div className="bg-white p-6 rounded-xl shadow-lg border border-light">
                 <h3 className="text-xl font-medium text-primary mb-6 text-center">
-                  Ubicación
+                  Nuestras Oficinas
                 </h3>
 
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mb-4">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6 text-accent"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                  </div>
-
-                  <div className="space-y-3">
+                <div className="space-y-6">
+                  {/* Oficina Ituzaingó - Primera */}
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center mr-4 mt-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 text-accent"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                      </svg>
+                    </div>
                     <div>
                       <h4 className="font-semibold text-primary text-base mb-2">
-                        Nuestra oficina
+                        Zona Oeste - Ituzaingó
                       </h4>
                       <p className="text-primary/80 leading-relaxed text-sm">
-                        Av. Corrientes 1234, Piso 5, Oficina A<br />
-                        Ciudad Autónoma de Buenos Aires
+                        General Félix Olazábal 1044 3° piso Oficina 308.
+                        <br />
+                        Edificio Los Manzanos.
+                        <br />
+                        (1714) Ituzaingó Norte - Zona Oeste
                       </p>
                     </div>
+                  </div>
 
+                  {/* Oficina CABA - Segunda */}
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center mr-4 mt-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 text-accent"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-primary text-base mb-2">
+                        CABA - Puerto Madero
+                      </h4>
+                      <p className="text-primary/80 leading-relaxed text-sm">
+                        Alicia M. de Justo 1150 2° piso Oficina 205 A<br />
+                        (C1107AAX) Puerto Madero - CABA
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="text-center pt-2">
                     <a
                       href="https://maps.google.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-accent hover:text-accent/80 text-xs transition-colors mt-2 px-3 py-1.5 border border-accent/30 rounded-lg hover:bg-accent/5"
+                      className="inline-flex items-center text-accent hover:text-accent/80 text-xs transition-colors px-3 py-1.5 border border-accent/30 rounded-lg hover:bg-accent/5"
                     >
                       <svg
                         className="h-3 w-3 mr-1.5"
@@ -241,7 +281,7 @@ Mensaje: ${formData.message}
                           clipRule="evenodd"
                         />
                       </svg>
-                      Ver en Google Maps
+                      Ver ubicaciones en Google Maps
                     </a>
                   </div>
                 </div>
