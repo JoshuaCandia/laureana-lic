@@ -7,7 +7,7 @@ export const services = [
     description:
       "Elegir no es fácil, pero se puede elegir con sentido. Acompañamos a adolescentes y jóvenes en el proceso de exploración y elección de su futuro académico y/o laboral.",
     icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
-    image: "/public/orientacion-vocacional.jpeg",
+    image: "/orientacion-vocacional.jpeg",
     fullDescription:
       "Nuestra propuesta combina entrevistas personalizadas, aplicación de técnicas psicométricas y proyectivas, espacios de reflexión individual y familiar.",
     highlights: [
@@ -25,7 +25,7 @@ export const services = [
     description:
       "El talento se elige, pero también se acompaña. Brindamos servicios de evaluación y selección de personal educativo con perspectiva humana y profesional.",
     icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z",
-    image: "/public/seleccion-de-personal.jpeg",
+    image: "/seleccion-de-personal.jpeg",
     fullDescription:
       "Diseñamos procesos adaptados a las necesidades de cada organización, integrando entrevistas por competencias, pruebas cognitivas y análisis de perfil.",
     highlights: [
@@ -40,7 +40,7 @@ export const services = [
     description:
       "Cada institución también tiene su punto de partida. Acompañamos a escuelas en sus desafíos pedagógicos y organizacionales.",
     icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
-    image: "/public/asesoramiento-escuelas.jpg",
+    image: "/asesoramiento-escuelas.jpg",
     fullDescription:
       "Nuestro enfoque busca fortalecer el trabajo en equipo, la toma de decisiones basadas en evidencia y el bienestar institucional.",
     services: [
@@ -64,7 +64,7 @@ export const services = [
     description:
       "Comprender para acompañar mejor. Realizamos evaluaciones neurocognitivas a niños y adolescentes para detectar fortalezas, dificultades y necesidades específicas.",
     icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
-    image: "/public/evaluaciones-neurocognitivas.jpeg",
+    image: "/evaluaciones-neurocognitivas.jpeg",
     fullDescription:
       "Utilizamos herramientas estandarizadas y confiables que permiten evaluar funciones como la atención, memoria, razonamiento, lenguaje, funciones ejecutivas y velocidad de procesamiento.",
     highlights: [
@@ -82,7 +82,7 @@ export const services = [
     description:
       "Intervenciones terapéuticas especializadas para abordar dificultades emocionales, conductuales y de aprendizaje.",
     icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
-    image: "/public/pisologicos-y-psicopedagogicos.jpg",
+    image: "/pisologicos-y-psicopedagogicos.jpg",
     fullDescription:
       "Ofrecemos tratamientos individualizados basados en evidencia científica, adaptados a las necesidades específicas de cada persona.",
     target: "Niños, adolescentes y adultos",
@@ -94,7 +94,7 @@ export const services = [
     description:
       "Encuentros informativos sobre crianza respetuosa, manejo de límites y tolerancia a la frustración en niños y adolescentes.",
     icon: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z",
-    image: "/public/orientacion-padres.jpeg",
+    image: "/orientacion-padres.jpeg",
     fullDescription:
       "Espacios de reflexión y aprendizaje para padres y cuidadores, brindando herramientas prácticas para el acompañamiento de niños y adolescentes.",
     target: "Padres y cuidadores",
