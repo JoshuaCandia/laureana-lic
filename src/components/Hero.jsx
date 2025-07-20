@@ -1,5 +1,4 @@
 import { m } from "framer-motion";
-import React from "react";
 import { useAnimation } from "../contexts/AnimationContext";
 
 const scrollToSection = (url) => {

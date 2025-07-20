@@ -1,16 +1,10 @@
 import { m } from "framer-motion";
 import React from "react";
 import { Link } from "react-router-dom";
-import { useAnimation } from "../contexts/AnimationContext";
-import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import { getCategories, getServicesByCategory } from "../mocks/services";
 import AnimatedCard from "./AnimatedCard";
 
 const Services = () => {
-  const { animationConfig } = useAnimation();
-  const [sectionRef, isSectionVisible] = useIntersectionObserver();
-  const categories = getCategories();
-
   const scrollToSection = (url) => {
     const element = document.querySelector(url);
     if (element) {
@@ -18,13 +12,47 @@ const Services = () => {
     }
   };
 
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const ctaVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        delay: 0.3,
+      },
+    },
+  };
+
+  const buttonHover = {
+    whileHover: { scale: 1.05 },
+    whileTap: { scale: 0.95 },
+  };
+
+  const categories = getCategories();
+
   return (
     <section id="services" className="py-24">
       <div className="container">
         <m.div
-          ref={sectionRef}
           className="text-center mb-16"
-          {...animationConfig.slideUpOnScroll(isSectionVisible)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={sectionVariants}
         >
           <h2 className="section-title">Nuestros Servicios</h2>
           <div className="divider" />
@@ -39,10 +67,8 @@ const Services = () => {
 
         {categories.map((category, categoryIndex) => {
           const categoryServices = getServicesByCategory(category.key);
-
           return (
             <div key={category.key} className="mb-20">
-              {/* Título de categoría */}
               <div className="text-center mb-12">
                 <div className="flex items-center justify-center mb-4">
                   <div
@@ -90,7 +116,6 @@ const Services = () => {
                 </div>
               </div>
 
-              {/* Servicios de la categoría */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {categoryServices.map((service, index) => (
                   <AnimatedCard
@@ -109,7 +134,6 @@ const Services = () => {
                       <h4 className="text-xl font-medium text-primary mb-4">
                         {service.title}
                       </h4>
-
                       <Link
                         to={`/servicio/${service.slug}`}
                         className="inline-block text-accent hover:text-accent/80 text-sm font-medium transition-colors duration-200"
@@ -126,11 +150,10 @@ const Services = () => {
 
         <m.div
           className="mt-16 text-center"
-          {...animationConfig.slideUpOnScroll(isSectionVisible)}
-          transition={{
-            ...animationConfig.slideUpOnScroll(isSectionVisible).transition,
-            delay: 0.5,
-          }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={ctaVariants}
         >
           <div className="max-w-2xl mx-auto p-8 bg-warm rounded-lg">
             <h3 className="text-xl font-medium text-primary mb-4">
@@ -148,7 +171,7 @@ const Services = () => {
                 scrollToSection("#contact");
               }}
               className="btn-primary"
-              {...animationConfig.hover}
+              {...buttonHover}
             >
               Solicitar consulta
             </m.a>

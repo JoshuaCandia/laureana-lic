@@ -19,10 +19,8 @@ Mensaje: ${formData.message}
     window.open(whatsappUrl, "_blank");
   };
 
-  // Función para abrir Google Forms
   const openGoogleForm = () => {
-    // Reemplaza esta URL con la URL de tu Google Form
-    const googleFormUrl = "https://forms.gle/TU_FORM_ID_AQUI";
+    const googleFormUrl = "https://forms.gle/KH8Gd5SxsxiyRQSS6";
     window.open(googleFormUrl, "_blank");
   };
 
@@ -91,17 +89,7 @@ Mensaje: ${formData.message}
 
                 {/* Opción 2: WhatsApp Directo */}
                 <m.div
-                  className="group p-6 border-2 border-light rounded-xl hover:border-accent hover:shadow-md transition-all duration-300 cursor-pointer bg-gradient-to-r from-accent/10 to-accent/5"
-                  onClick={() =>
-                    openWhatsApp({
-                      name: "Usuario del sitio web",
-                      email: "No proporcionado",
-                      phone: "",
-                      service: "Consulta general",
-                      message:
-                        "Hola, me gustaría obtener más información sobre sus servicios.",
-                    })
-                  }
+                  className="group p-6 border-2 border-light rounded-xl hover:border-accent hover:shadow-md transition-all duration-300 bg-gradient-to-r from-accent/10 to-accent/5"
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -120,13 +108,46 @@ Mensaje: ${formData.message}
                         WhatsApp directo
                       </h4>
                       <p className="text-sm text-primary/70">
-                        Chatea con nosotros ahora
+                        Elige con quién contactar
                       </p>
                     </div>
                   </div>
-                  <p className="text-primary/80 text-sm leading-relaxed">
-                    Envíanos un mensaje directo por WhatsApp. Te responderemos
-                    al instante con la información que necesites.
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                    <button
+                      onClick={() =>
+                        window.open(
+                          "https://wa.me/5491130208967?text=" +
+                            encodeURIComponent(
+                              "Hola, me gustaría obtener más información."
+                            ),
+                          "_blank"
+                        )
+                      }
+                      className="w-full bg-accent text-white text-sm py-2 rounded-lg hover:bg-accent/90 transition-all"
+                    >
+                      WhatsApp 1
+                    </button>
+
+                    <button
+                      onClick={() =>
+                        window.open(
+                          "https://wa.me/5491149464610?text=" +
+                            encodeURIComponent(
+                              "Hola, me gustaría obtener más información."
+                            ),
+                          "_blank"
+                        )
+                      }
+                      className="w-full bg-accent text-white text-sm py-2 rounded-lg hover:bg-accent/90 transition-all"
+                    >
+                      WhatsApp 2
+                    </button>
+                  </div>
+
+                  <p className="text-primary/80 text-sm leading-relaxed mt-4">
+                    Puedes comunicarte con cualquiera de nuestros números
+                    disponibles. Responderemos a la brevedad.
                   </p>
                 </m.div>
 

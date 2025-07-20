@@ -3,7 +3,7 @@ export const professionals = [
     slug: "maria-laureana-cazon",
     name: "Cazon, M. Laureana",
     title: "Licenciada en Psicología",
-    image: "https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg",
+    image: "/public/maria-laureana-cazon.jpeg",
     description:
       "Actualmente cursa la Maestría en Psicología Organizacional con orientación gerencial. Especialista en procesos de selección de personal y desarrollo organizacional.",
     fullDescription:
@@ -26,7 +26,7 @@ export const professionals = [
     name: "Cazon, M. Ricarda",
     title:
       "Licenciada en Psicopedagogía – Magíster en neuropsicología infantil y neuroeducación",
-    image: "https://images.pexels.com/photos/7176026/pexels-photo-7176026.jpeg",
+    image: "/public/maria-ricarda-cazon.jpeg",
     description:
       "Con amplia experiencia en el ámbito educativo y más de 20 años abordando la orientación vocacional.",
     fullDescription:
@@ -43,7 +43,7 @@ export const professionals = [
     slug: "jimena-ines-castineiras",
     name: "Castiñeiras, Jimena Inés",
     title: "Licenciada en Psicología – Magister en neuropsicología",
-    image: "https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg",
+    image: "/public/jimena-ines-castineiras.jpg",
     description: "Especialista en evaluación e intervención neurocognitiva.",
     fullDescription:
       "Su trayectoria profesional se centra en la promoción de la salud mental y la selección de perfiles para desempeñarse en diferentes puestos de trabajo. Actualmente se desempeña como representante legal de una institución educativa.",
