@@ -57,6 +57,7 @@ const About = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <TeamMemberCard
               name="Jimena Inés Castiñeiras"
+              index={0}
               credentials={[
                 "Lic en psicología (m.n: 32289 / mp: 82095)",
                 "Especialista en evaluación neuropsicológica (universidad Favaloro)",
@@ -69,6 +70,7 @@ const About = () => {
             
             <TeamMemberCard
               name="M. Ricarda Cazón"
+              index={1}
               credentials={[
                 "Lic. en Psicopedagogía (RN: 7084/02 RP: 319)",
                 "Profesora en Psicopedagogía",
@@ -79,6 +81,7 @@ const About = () => {
             
             <TeamMemberCard
               name="M. Laureana Cazón"
+              index={2}
               credentials={[
                 "Lic en psicología (mp: 86.305)",
                 "Magister en Psicología organizacional con orientación gerencial (en curso)"
@@ -92,7 +95,7 @@ const About = () => {
 };
 
 // Componente para las tarjetas de miembros del equipo
-const TeamMemberCard = ({ name, credentials }) => {
+const TeamMemberCard = ({ name, credentials, index }) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
   return (
