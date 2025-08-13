@@ -38,10 +38,7 @@ const Hero = () => {
               Inicios con propósito
             </p>
             <p className="text-base sm:text-lg md:text-xl text-primary/80 mb-6 md:mb-8 max-w-lg mx-auto lg:mx-0">
-              Salud mental y acompañamiento integral en el ámbito educativo y
-              clínico. Consultora formada por profesionales de la salud mental y
-              la educación, con amplia trayectoria en orientación vocacional,
-              evaluaciones neurocognitivas y asesoramiento institucional.
+              Consultora formada por profesionales especializados en el diagnóstico, tratamiento, orientación y prevención en salud mental y educación.
             </p>
             <m.a
               href="#contact"
