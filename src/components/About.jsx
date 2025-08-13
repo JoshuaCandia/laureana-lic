@@ -86,7 +86,7 @@ const About = () => {
             />
           </div>
         </div>
-      </div>
+      </m.div>
     </section>
   );
 };
