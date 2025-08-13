@@ -85,8 +85,8 @@ const About = () => {
               ]}
             />
           </div>
-        </div>
-      </m.div>
+        </m.div>
+      </div>
     </section>
   );
 };
