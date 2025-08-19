@@ -23,8 +23,9 @@ export default defineConfig({
   },
   server: {
     // Configuración del servidor de desarrollo
-    host: true,
-    port: 3000,
+    host: 'localhost',
+    port: 5173,
+    open: true
   },
   optimizeDeps: {
     // Pre-bundling de dependencias
