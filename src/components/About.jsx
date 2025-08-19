@@ -74,8 +74,8 @@ const About = () => {
               credentials={[
                 "Lic. en Psicopedagogía (RN: 7084/02 RP: 319)",
                 "Profesora en Psicopedagogía",
-                "Magister en neuropsicología infantil y neuroeducación (universidad de morón)",
-                "Diplomatura en inteligencia emocional aplicada a la educación (universidad abierta interamericana)"
+                "Magister en neuropsicología infantil y neuroeducación (UM)",
+                "Diplomatura en inteligencia emocional aplicada a la educación (UAI)"
               ]}
             />
             
@@ -84,7 +84,7 @@ const About = () => {
               index={2}
               credentials={[
                 "Lic en psicología (mp: 86.305)",
-                "Magister en Psicología organizacional con orientación gerencial (en curso)"
+                "Magister en Psicología organizacional con orientación gerencial (UAI)"
               ]}
             />
           </div>
