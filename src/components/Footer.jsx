@@ -49,18 +49,26 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/servicio/capacitacion-docente"
+                  href="/servicio/asesoramiento-escuelas"
                   className="text-white/70 hover:text-accent transition-colors"
                 >
-                  Capacitación Docente
+                  Asesoramiento a Escuelas
                 </a>
               </li>
               <li>
                 <a
-                  href="/servicio/neuroliderazgo"
+                  href="/servicio/charlas-seguridad-emergencias"
                   className="text-white/70 hover:text-accent transition-colors"
                 >
-                  Neuroliderazgo
+                  Charlas de Seguridad
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/servicio/consultorio-psicologico"
+                  className="text-white/70 hover:text-accent transition-colors"
+                >
+                  Consultorio Psicológico
                 </a>
               </li>
             </ul>
@@ -113,10 +121,10 @@ const Footer = () => {
                   +54 9 11 2345-6789
                 </a>
               </li>
-              <li className="flex items-center">
+              <li className="flex items-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 mr-2 text-accent"
+                  className="h-5 w-5 mr-2 mt-0.5 text-accent flex-shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -134,7 +142,14 @@ const Footer = () => {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <span className="text-white/70">Av. Corrientes 1234, CABA</span>
+                <div className="space-y-1">
+                  <span className="text-white/70 block">
+                    Olazábal 1044 3° piso - 308, Ituzaingó
+                  </span>
+                  <span className="text-white/70 block">
+                    Alicia M. de Justo 1150 2° piso, Puerto Madero
+                  </span>
+                </div>
               </li>
             </ul>
 

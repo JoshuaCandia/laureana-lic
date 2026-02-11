@@ -25,7 +25,9 @@ const About = () => {
           <h2 className="section-title">Sobre Nosotras</h2>
           <div className="divider" />
           <p className="section-subtitle mb-8">
-            Punto de partida cuenta con especialistas en orientación vocacional, selección de personal, evaluaciones neurocognitivas, asesoramiento institucional, tratamiento psicológico y psicopedagógico.
+            Punto de partida cuenta con especialistas en orientación vocacional,
+            selección de personal, evaluaciones neurocognitivas, asesoramiento
+            institucional, tratamiento psicológico y psicopedagógico.
           </p>
         </m.div>
 
@@ -44,47 +46,84 @@ const About = () => {
           <h3 className="text-2xl md:text-3xl font-serif font-medium text-primary mb-8 text-center">
             Coordinación
           </h3>
-          
-          {/* Placeholder para foto del equipo */}
-          <div className="bg-secondary/50 rounded-lg p-8 mb-8 text-center">
-            <div className="w-full h-64 bg-secondary rounded-lg flex items-center justify-center mb-4">
-              <span className="text-primary/60">Foto del equipo de coordinación</span>
+
+          {/* Fotos del equipo de coordinación */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div className="flex flex-col items-center">
+              <div className="relative overflow-hidden rounded-lg shadow-lg mb-3 transition-transform hover:scale-105">
+                <img
+                  src="/jimena_ines.jpeg"
+                  alt="Jimena Inés Castiñeiras - Lic en Psicología"
+                  className="w-full aspect-square object-cover"
+                />
+              </div>
+              <p className="text-center text-primary font-medium">
+                Jimena Inés Castiñeiras
+              </p>
             </div>
-            <p className="text-primary/60">Aquí irá la foto de las 3 coordinadoras</p>
+
+            <div className="flex flex-col items-center">
+              <div className="relative overflow-hidden rounded-lg shadow-lg mb-3 transition-transform hover:scale-105">
+                <img
+                  src="/ricarda_cazon.jpeg"
+                  alt="M. Ricarda Cazón - Lic. en Psicopedagogía"
+                  className="w-full aspect-square object-cover"
+                />
+              </div>
+              <p className="text-center text-primary font-medium">
+                M. Ricarda Cazón
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <div className="relative overflow-hidden rounded-lg shadow-lg mb-3 transition-transform hover:scale-105">
+                <img
+                  src="/laureana_cazon.jpeg"
+                  alt="M. Laureana Cazón - Lic en Psicología"
+                  className="w-full aspect-square object-cover"
+                />
+              </div>
+              <p className="text-center text-primary font-medium">
+                M. Laureana Cazón
+              </p>
+            </div>
           </div>
-          
+
           {/* Perfiles del equipo */}
           <div className="grid md:grid-cols-3 gap-6">
             <TeamMemberCard
+              key="jimena"
               name="Jimena Inés Castiñeiras"
               index={0}
               credentials={[
-                "Lic en psicología (m.n: 32289 / mp: 82095)",
+                "Lic en Psicología (m.n: 32289 / mp: 82095)",
                 "Especialista en evaluación neuropsicológica (universidad Favaloro)",
-                "Docente (en la UTN)",
+                "Docente (en UTN)",
                 "Diplomada en estrategias de comunicación y liderazgo organizacional (USAL)",
                 "Selectora de personal (UBA)",
-                "Esp. en clínica psicoanalítica de la infancia y la adolescencia (Asappia)"
+                "Esp. en clínica psicoanalítica de la infancia y la adolescencia (Asappia)",
               ]}
             />
-            
+
             <TeamMemberCard
+              key="ricarda"
               name="M. Ricarda Cazón"
               index={1}
               credentials={[
                 "Lic. en Psicopedagogía (RN: 7084/02 RP: 319)",
                 "Profesora en Psicopedagogía",
                 "Magister en neuropsicología infantil y neuroeducación (UM)",
-                "Diplomatura en inteligencia emocional aplicada a la educación (UAI)"
+                "Diplomatura en inteligencia emocional aplicada a la educación (UAI)",
               ]}
             />
-            
+
             <TeamMemberCard
+              key="laureana"
               name="M. Laureana Cazón"
               index={2}
               credentials={[
-                "Lic en psicología (mp: 86.305)",
-                "Magister en Psicología organizacional con orientación gerencial (UAI)"
+                "Lic en Psicología (mp: 86.305)",
+                "Magister en Psicología organizacional con orientación gerencial (UAI)",
               ]}
             />
           </div>
@@ -119,7 +158,9 @@ const TeamMemberCard = ({ name, credentials, index }) => {
             </svg>
           </div>
         </div>
-        <h4 className="text-lg font-medium text-primary text-center mb-4">{name}</h4>
+        <h4 className="text-lg font-medium text-primary text-center mb-4">
+          {name}
+        </h4>
         <button
           onClick={() => setIsExpanded(!isExpanded)}
           className="w-full bg-accent text-white px-4 py-2 rounded-lg hover:bg-accent/90 transition-colors flex items-center justify-center gap-2"
@@ -127,7 +168,7 @@ const TeamMemberCard = ({ name, credentials, index }) => {
           Ver perfil
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className={`w-4 h-4 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+            className={`w-4 h-4 transition-transform ${isExpanded ? "rotate-180" : ""}`}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -140,7 +181,7 @@ const TeamMemberCard = ({ name, credentials, index }) => {
             />
           </svg>
         </button>
-        
+
         {isExpanded && (
           <div className="mt-4 pt-4 border-t border-light">
             <ul className="space-y-2 text-sm text-primary/80">
