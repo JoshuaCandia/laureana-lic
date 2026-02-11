@@ -23,7 +23,7 @@ export const professionals = [
   },
   {
     slug: "maria-ricarda-cazon",
-    name: "Cazon, M. Ricarda",
+    name: "Cazon, Maria Ricarda",
     title:
       "Licenciada en Psicopedagogía – Magíster en neuropsicología infantil y neuroeducación",
     image: "/maria-ricarda-cazon.jpeg",

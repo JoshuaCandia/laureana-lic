@@ -66,12 +66,12 @@ const About = () => {
               <div className="relative overflow-hidden rounded-lg shadow-lg mb-3 transition-transform hover:scale-105">
                 <img
                   src="/ricarda_cazon.jpeg"
-                  alt="M. Ricarda Cazón - Lic. en Psicopedagogía"
+                  alt="Maria Ricarda Cazón - Lic. en Psicopedagogía"
                   className="w-full aspect-square object-cover"
                 />
               </div>
               <p className="text-center text-primary font-medium">
-                M. Ricarda Cazón
+                Maria Ricarda Cazón
               </p>
             </div>
 
@@ -98,7 +98,7 @@ const About = () => {
               credentials={[
                 "Lic en Psicología (m.n: 32289 / mp: 82095)",
                 "Especialista en evaluación neuropsicológica (universidad Favaloro)",
-                "Docente (en UTN)",
+                "Docente (UTN)",
                 "Diplomada en estrategias de comunicación y liderazgo organizacional (USAL)",
                 "Selectora de personal (UBA)",
                 "Esp. en clínica psicoanalítica de la infancia y la adolescencia (Asappia)",
@@ -107,7 +107,7 @@ const About = () => {
 
             <TeamMemberCard
               key="ricarda"
-              name="M. Ricarda Cazón"
+              name="Maria Ricarda Cazón"
               index={1}
               credentials={[
                 "Lic. en Psicopedagogía (RN: 7084/02 RP: 319)",
