@@ -52,7 +52,7 @@ const About = () => {
             <div className="flex flex-col items-center">
               <div className="relative overflow-hidden rounded-lg shadow-lg mb-3 transition-transform hover:scale-105">
                 <img
-                  src="/jimena_ines.jpeg"
+                  src="/jimena.jpeg"
                   alt="Jimena Inés Castiñeiras - Lic en Psicología"
                   className="w-full aspect-square object-cover"
                 />
