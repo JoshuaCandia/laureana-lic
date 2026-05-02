@@ -156,7 +156,7 @@ Mensaje: ${formData.message}
                   className="group p-6 border-2 border-light rounded-xl hover:border-accent hover:shadow-md transition-all duration-300 cursor-pointer bg-gradient-to-r from-accent/10 to-accent/5"
                   onClick={() =>
                     window.open(
-                      "mailto:info@puntodepartida.com?subject=Consulta desde sitio web&body=Hola, me gustaría obtener más información sobre sus servicios.",
+                      "mailto:consultora.pdp@gmail.com?subject=Consulta desde sitio web&body=Hola, me gustaría obtener más información sobre sus servicios.",
                       "_blank"
                     )
                   }

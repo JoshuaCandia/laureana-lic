@@ -11,8 +11,8 @@ const ServicePage = () => {
 
   // Animación de entrada de página
   useEffect(() => {
-    document.body.classList.add('page-enter');
-    return () => document.body.classList.remove('page-enter');
+    document.body.classList.add("page-enter");
+    return () => document.body.classList.remove("page-enter");
   }, []);
 
   if (!service) {
@@ -37,7 +37,7 @@ const ServicePage = () => {
     }
   };
 
-  const categoryColor = service.category === 'educativo' ? 'blue' : 'green';
+  const categoryColor = service.category === "educativo" ? "blue" : "green";
 
   return (
     <>
@@ -53,13 +53,17 @@ const ServicePage = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-6 ${
-                  categoryColor === 'blue' ? 'bg-blue-100' : 'bg-green-100'
-                }`}>
+                <div
+                  className={`w-16 h-16 rounded-full flex items-center justify-center mb-6 ${
+                    categoryColor === "blue" ? "bg-blue-100" : "bg-green-100"
+                  }`}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className={`h-8 w-8 ${
-                      categoryColor === 'blue' ? 'text-blue-600' : 'text-green-600'
+                      categoryColor === "blue"
+                        ? "text-blue-600"
+                        : "text-green-600"
                     }`}
                     fill="none"
                     viewBox="0 0 24 24"
@@ -98,7 +102,9 @@ const ServicePage = () => {
                     Ver detalles
                   </m.a>
                   <m.a
-                    href="/#contact"
+                    href="https://wa.me/5491130208967?text=Hola,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n."
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn-secondary"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -136,7 +142,10 @@ const ServicePage = () => {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {service.highlights.map((highlight, index) => (
-                    <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-light">
+                    <div
+                      key={index}
+                      className="bg-white p-6 rounded-lg shadow-sm border border-light"
+                    >
                       <div className="flex items-start">
                         <span className="text-accent mr-3 mt-1">👉</span>
                         <p className="text-primary/80">{highlight}</p>
@@ -170,13 +179,17 @@ const ServicePage = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               {service.target && (
                 <div className="text-center">
-                  <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
-                    categoryColor === 'blue' ? 'bg-blue-100' : 'bg-green-100'
-                  }`}>
+                  <div
+                    className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
+                      categoryColor === "blue" ? "bg-blue-100" : "bg-green-100"
+                    }`}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className={`h-8 w-8 ${
-                        categoryColor === 'blue' ? 'text-blue-600' : 'text-green-600'
+                        categoryColor === "blue"
+                          ? "text-blue-600"
+                          : "text-green-600"
                       }`}
                       fill="none"
                       viewBox="0 0 24 24"
@@ -198,13 +211,17 @@ const ServicePage = () => {
               )}
 
               <div className="text-center">
-                <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
-                  categoryColor === 'blue' ? 'bg-blue-100' : 'bg-green-100'
-                }`}>
+                <div
+                  className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
+                    categoryColor === "blue" ? "bg-blue-100" : "bg-green-100"
+                  }`}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className={`h-8 w-8 ${
-                      categoryColor === 'blue' ? 'text-blue-600' : 'text-green-600'
+                      categoryColor === "blue"
+                        ? "text-blue-600"
+                        : "text-green-600"
                     }`}
                     fill="none"
                     viewBox="0 0 24 24"
@@ -225,13 +242,17 @@ const ServicePage = () => {
               </div>
 
               <div className="text-center">
-                <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
-                  categoryColor === 'blue' ? 'bg-blue-100' : 'bg-green-100'
-                }`}>
+                <div
+                  className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
+                    categoryColor === "blue" ? "bg-blue-100" : "bg-green-100"
+                  }`}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className={`h-8 w-8 ${
-                      categoryColor === 'blue' ? 'text-blue-600' : 'text-green-600'
+                      categoryColor === "blue"
+                        ? "text-blue-600"
+                        : "text-green-600"
                     }`}
                     fill="none"
                     viewBox="0 0 24 24"
@@ -274,12 +295,17 @@ const ServicePage = () => {
                 ¿Estás interesado en este servicio?
               </h3>
               <p className="text-primary/80 mb-6 max-w-2xl mx-auto">
-                Contáctanos para obtener más información sobre{" "}
+                Contactános para obtener más información sobre{" "}
                 {service.title.toLowerCase()} y descubre cómo podemos ayudarte a
                 alcanzar tus objetivos.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <a href="/#contact" className="btn-primary">
+                <a
+                  href="https://forms.gle/KH8Gd5SxsxiyRQSS6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                >
                   Solicitar información
                 </a>
                 <a

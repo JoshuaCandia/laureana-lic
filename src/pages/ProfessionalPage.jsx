@@ -199,7 +199,7 @@ const ProfessionalPage = () => {
                 ¿Quieres agendar una consulta?
               </h3>
               <p className="text-primary/80 mb-6 max-w-2xl mx-auto">
-                Contáctanos para coordinar una cita con {professional.name} y
+                Contactános para coordinar una cita con {professional.name} y
                 comenzar tu proceso de acompañamiento profesional.
               </p>
               <a href="/#contact" className="btn-primary">

@@ -6,7 +6,6 @@ const navItems = [
   { name: "Inicio", url: "#hero" },
   { name: "Sobre Nosotras", url: "#about" },
   { name: "Servicios", url: "#services" },
-  { name: "Contacto", url: "#contact" },
 ];
 
 const Navbar = () => {
@@ -123,7 +122,7 @@ const Navbar = () => {
                 }}
                 className="btn-primary"
               >
-                Contáctanos
+                Contactános
               </a>
             </m.li>
           </ul>
@@ -185,7 +184,7 @@ const Navbar = () => {
                   }}
                   className="btn-primary w-full text-center mt-2"
                 >
-                  Contáctanos
+                  Contactános
                 </a>
               </m.li>
             </ul>

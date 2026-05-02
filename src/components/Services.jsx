@@ -160,7 +160,7 @@ const Services = () => {
               ¿Necesitas más información?
             </h3>
             <p className="text-primary/80 mb-6">
-              Cada persona y situación es única. Contáctanos para una consulta
+              Cada persona y situación es única. Contactános para una consulta
               personalizada y descubre cómo podemos ayudarte a alcanzar tus
               objetivos.
             </p>

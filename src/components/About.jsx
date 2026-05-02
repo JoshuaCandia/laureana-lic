@@ -1,4 +1,4 @@
-import { m } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAnimation } from "../contexts/AnimationContext";
@@ -48,56 +48,56 @@ const About = () => {
           </h3>
 
           {/* Fotos del equipo de coordinación */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 max-w-4xl mx-auto">
             <div className="flex flex-col items-center">
-              <div className="relative overflow-hidden rounded-lg shadow-lg mb-3 transition-transform hover:scale-105">
+              <div className="relative overflow-hidden rounded-lg shadow-lg mb-3 transition-transform hover:scale-105 max-w-[200px]">
                 <img
                   src="/jimena_ines.jpeg"
                   alt="Jimena Inés Castiñeiras - Lic en Psicología"
                   className="w-full aspect-square object-cover"
                 />
               </div>
-              <p className="text-center text-primary font-medium">
+              <p className="text-center text-primary font-medium text-sm">
                 Jimena Inés Castiñeiras
               </p>
             </div>
 
             <div className="flex flex-col items-center">
-              <div className="relative overflow-hidden rounded-lg shadow-lg mb-3 transition-transform hover:scale-105">
+              <div className="relative overflow-hidden rounded-lg shadow-lg mb-3 transition-transform hover:scale-105 max-w-[200px]">
                 <img
                   src="/ricarda_cazon.jpeg"
                   alt="Maria Ricarda Cazón - Lic. en Psicopedagogía"
                   className="w-full aspect-square object-cover"
                 />
               </div>
-              <p className="text-center text-primary font-medium">
+              <p className="text-center text-primary font-medium text-sm">
                 Maria Ricarda Cazón
               </p>
             </div>
 
             <div className="flex flex-col items-center">
-              <div className="relative overflow-hidden rounded-lg shadow-lg mb-3 transition-transform hover:scale-105">
+              <div className="relative overflow-hidden rounded-lg shadow-lg mb-3 transition-transform hover:scale-105 max-w-[200px]">
                 <img
                   src="/laureana_cazon.jpeg"
                   alt="M. Laureana Cazón - Lic en Psicología"
                   className="w-full aspect-square object-cover"
                 />
               </div>
-              <p className="text-center text-primary font-medium">
+              <p className="text-center text-primary font-medium text-sm">
                 M. Laureana Cazón
               </p>
             </div>
           </div>
 
           {/* Perfiles del equipo */}
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto items-start">
             <TeamMemberCard
               key="jimena"
               name="Jimena Inés Castiñeiras"
               index={0}
               credentials={[
-                "Lic en Psicología (m.n: 32289 / mp: 82095)",
-                "Especialista en evaluación neuropsicológica (universidad Favaloro)",
+                "Lic en Psicología (MN: 32289 / MP: 82095)",
+                "Especialista en evaluación neuropsicológica (Universidad Favaloro)",
                 "Docente (UTN)",
                 "Diplomada en estrategias de comunicación y liderazgo organizacional (USAL)",
                 "Selectora de personal (UBA)",
@@ -138,7 +138,13 @@ const TeamMemberCard = ({ name, credentials, index }) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-light">
+    <m.div
+      className="bg-white rounded-lg shadow-lg overflow-hidden border border-light"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, delay: index * 0.1 }}
+    >
       <div className="p-6">
         <div className="flex items-center justify-center mb-4">
           <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center">
@@ -161,17 +167,21 @@ const TeamMemberCard = ({ name, credentials, index }) => {
         <h4 className="text-lg font-medium text-primary text-center mb-4">
           {name}
         </h4>
-        <button
+        <m.button
           onClick={() => setIsExpanded(!isExpanded)}
           className="w-full bg-accent text-white px-4 py-2 rounded-lg hover:bg-accent/90 transition-colors flex items-center justify-center gap-2"
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
         >
           Ver perfil
-          <svg
+          <m.svg
             xmlns="http://www.w3.org/2000/svg"
-            className={`w-4 h-4 transition-transform ${isExpanded ? "rotate-180" : ""}`}
+            className="w-4 h-4"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
+            animate={{ rotate: isExpanded ? 180 : 0 }}
+            transition={{ duration: 0.3 }}
           >
             <path
               strokeLinecap="round"
@@ -179,23 +189,37 @@ const TeamMemberCard = ({ name, credentials, index }) => {
               strokeWidth="2"
               d="M19 9l-7 7-7-7"
             />
-          </svg>
-        </button>
+          </m.svg>
+        </m.button>
 
-        {isExpanded && (
-          <div className="mt-4 pt-4 border-t border-light">
-            <ul className="space-y-2 text-sm text-primary/80">
-              {credentials.map((credential, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  <span>{credential}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        <AnimatePresence>
+          {isExpanded && (
+            <m.div
+              className="mt-4 pt-4 border-t border-light overflow-hidden"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <ul className="space-y-2 text-sm text-primary/80">
+                {credentials.map((credential, idx) => (
+                  <m.li
+                    key={idx}
+                    className="flex items-start"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.2, delay: idx * 0.05 }}
+                  >
+                    <span className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span>{credential}</span>
+                  </m.li>
+                ))}
+              </ul>
+            </m.div>
+          )}
+        </AnimatePresence>
       </div>
-    </div>
+    </m.div>
   );
 };
 export default About;
