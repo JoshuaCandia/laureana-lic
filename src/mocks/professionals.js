@@ -43,7 +43,7 @@ export const professionals = [
     slug: "jimena-ines-castineiras",
     name: "Castiñeiras, Jimena Inés",
     title: "Licenciada en Psicología – Magister en neuropsicología",
-    image: "/jimena-ines-castineiras.jpg",
+    image: "/jimena.jpeg",
     description: "Especialista en evaluación e intervención neurocognitiva.",
     fullDescription:
       "Su trayectoria profesional se centra en la promoción de la salud mental y la selección de perfiles para desempeñarse en diferentes puestos de trabajo. Actualmente se desempeña como representante legal de una institución educativa.",
